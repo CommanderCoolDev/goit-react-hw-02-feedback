@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import FeedBackOptions from 'Components/FeedbackOptions/FeedbackOptions';
+import Statistics from 'Components/Statistics/Statistics';
+import Notification from 'Components/Notification/Notification';
+
 import './App.css';
 
 const initialState = {
@@ -27,28 +31,23 @@ export default class App extends Component {
   };
 
   render() {
+    const total = this.countTotalFeedback();
     return (
       <div>
         <h2>Please leave Feedback</h2>
-        {Object.keys(this.state).map(i => (
-          <button
-            key={i}
-            className=""
-            onClick={() => {
-              this.addFeedback(i);
-            }}
-          >
-            {i}
-          </button>
-        ))}
+        <FeedBackOptions states={this.state} onFeedback={this.addFeedback} />
         <h2>Statistics</h2>
-        {Object.keys(this.state).map(i => (
-          <p key={i}>
-            {i}: {this.state[i]}
-          </p>
-        ))}
-        <p>total : {this.countTotalFeedback()}</p>
-        <p>percentage: {this.countPositiveFeedbackPercentage()}%</p>
+        <div>
+          {total > 0 ? (
+            <Statistics
+              states={this.state}
+              total={total}
+              percentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="No feedback given" />
+          )}
+        </div>
       </div>
     );
   }
