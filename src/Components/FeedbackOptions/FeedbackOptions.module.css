@@ -1,4 +1,16 @@
-.item {
+.btn {
+  width: 100px;
   margin: 5px;
   padding: 5px 20px;
+  border-radius: 20px;
+  background: #68e0cf;
+  border: 2px solid #84fab0;
+  box-shadow: 4px 4px 9px #84fab0;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  box-shadow: 4px 4px 9px #0cf060;
+
+  background: #0eeccf;
 }

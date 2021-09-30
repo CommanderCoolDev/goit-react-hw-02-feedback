@@ -8,7 +8,7 @@ export default function FeedbackOptions({ states, onFeedback }) {
         <button
           key={i}
           type="button"
-          className={s.item}
+          className={s.btn}
           onClick={() => {
             onFeedback(i);
           }}

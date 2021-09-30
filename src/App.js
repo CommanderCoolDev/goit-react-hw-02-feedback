@@ -33,7 +33,7 @@ export default class App extends Component {
   render() {
     const total = this.countTotalFeedback();
     return (
-      <div>
+      <div className="section">
         <h2>Please leave Feedback</h2>
         <FeedBackOptions states={this.state} onFeedback={this.addFeedback} />
         <h2>Statistics</h2>
