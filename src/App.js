@@ -20,6 +20,12 @@ export default class App extends Component {
         {Object.keys(this.state).map(i => (
           <button className="">{i}</button>
         ))}
+        <h2>Statistics</h2>
+        {Object.keys(this.state).map(i => (
+          <p key={i}>
+            {i}: {this.state[i]}
+          </p>
+        ))}
       </div>
     );
   }
