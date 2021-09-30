@@ -5,12 +5,6 @@ import Notification from 'Components/Notification/Notification';
 
 import './App.css';
 
-const initialState = {
-  good: 0,
-  neutral: 0,
-  bad: 0,
-};
-
 export default class App extends Component {
   state = {
     good: 0,
